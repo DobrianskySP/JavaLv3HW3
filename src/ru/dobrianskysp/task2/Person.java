@@ -4,30 +4,25 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Person {
-    String name;
-    ArrayList<String> data = new ArrayList<>();
-    HashMap<String,ArrayList> person = new HashMap<>();
+    private String phone;
+    private String email;
 
-    public Person() {
+    public Person(){
     }
 
-    public String getName(String name) {
-        this.name = name;
-        return this.name;
+    public Person(String phone, String email) {
+        this.phone = phone;
+        this.email = email;
+        ArrayList<String> data = new ArrayList<>();
+        data.add(0,phone);
+        data.add(1,email);
     }
 
-    public void setdata(String name, String number, String email){
-        this.data.add(number);
-        this.data.add(email);
-        this.person.put(name, data);
+    public String getEmail() {
+        return email;
     }
 
-    public ArrayList getdata(String person){
-        return this.person.get(person);
-    }
-
-    @Override
-    public String toString() {
-        return name;
+    public String getNumber() {
+        return phone;
     }
 }
